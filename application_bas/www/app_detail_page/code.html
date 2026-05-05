@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Advanced CRM - App Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#041b3c",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "secondary-fixed-dim": "#6fd7d6",
+                        "tertiary-fixed": "#e1e2e4",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#006a6a",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e8edff",
+                        "tertiary-fixed-dim": "#c5c6c8",
+                        "on-tertiary-container": "#d2d3d5",
+                        "on-secondary-fixed": "#002020",
+                        "outline-variant": "#c3c6d6",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-variant": "#d7e2ff",
+                        "primary": "#003d9b",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-surface-variant": "#434654",
+                        "on-secondary-container": "#007070",
+                        "on-tertiary-fixed": "#191c1e",
+                        "primary-fixed": "#dae2ff",
+                        "on-primary-fixed": "#001848",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-surface": "#041b3c",
+                        "secondary-fixed": "#8cf3f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "tertiary-container": "#595b5d",
+                        "background": "#f9f9ff",
+                        "inverse-surface": "#1d3052",
+                        "on-primary-container": "#c4d2ff",
+                        "secondary-container": "#8cf3f3",
+                        "outline": "#737685",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#0c56d0",
+                        "surface-container-highest": "#d7e2ff",
+                        "inverse-primary": "#b2c5ff",
+                        "surface-container-high": "#e0e8ff",
+                        "surface-bright": "#f9f9ff",
+                        "error": "#ba1a1a",
+                        "tertiary": "#414446",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "surface": "#f9f9ff",
+                        "surface-dim": "#cadaff",
+                        "primary-container": "#0052cc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "0.5rem",
+                        "xl": "4rem",
+                        "sm": "1rem",
+                        "max-width": "1280px",
+                        "gutter": "1.5rem",
+                        "margin": "2rem",
+                        "md": "1.5rem",
+                        "unit": "4px",
+                        "lg": "2.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "code-md": ["monospace"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md pt-20">
+<!-- TopNavBar (From JSON) -->
+<header class="fixed top-0 w-full border-b border-gray-200 dark:border-gray-800 shadow-sm dark:shadow-none bg-white dark:bg-gray-900 z-50">
+<div class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto font-sans text-sm font-medium tracking-tight">
+<div class="flex items-center gap-6">
+<a class="text-xl font-bold text-gray-900 dark:text-white" href="#">Frappe Cloud</a>
+<div class="hidden md:flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-gray-400" style="font-size: 18px;">search</span>
+<input class="pl-8 pr-4 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 w-64 text-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 transition-all duration-200 focus:border-primary focus:ring-primary" placeholder="Search apps..." type="text"/>
+</div>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 py-4 -mb-[17px] Active: opacity-80 duration-200 transition-all duration-200" href="#">Explore</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-4 -mb-[17px] transition-all duration-200" href="#">Documentation</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-4 -mb-[17px] transition-all duration-200" href="#">Community</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors transition-colors duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md hover:opacity-90 transition-opacity duration-200 hover:bg-primary-container">Sign In</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-lg py-lg space-y-xl">
+<!-- App Header Bento -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Info Card -->
+<div class="md:col-span-8 bg-surface rounded-xl border border-outline-variant p-lg shadow-[0_4px_24px_rgba(23,43,77,0.08)] flex flex-col justify-between">
+<div class="flex gap-md items-start">
+<div class="w-24 h-24 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 border border-outline-variant overflow-hidden">
+<img alt="App Icon" class="w-full h-full object-cover" data-alt="A modern, abstract 3D icon representing a CRM system. The icon features interlocking geometric shapes, primarily spheres and cubes, in shades of deep corporate blue and vibrant teal. The shapes are rendered with a smooth, glossy material, reflecting soft, high-key studio lighting. The background is a stark, clean white, emphasizing the minimalist, professional aesthetic of a high-end business software application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv4We42Di12MS63Q4eHk0vPatnkZDHyD4RRVdtI79-UN8YQAlNWJyQU0LZa7mNkeNJAQSii3WD5auAXBulBAT-tTAb-R9xob3KebE4MrKPvv6vmRKbK6eM3fpDGgAWaTldBUsTb0kiY1RgHt6SwJUNgPMcFkZwYIovQcyhsWzkquosbnUbjxEFJXP4XPSGNgS8QBAp34UJgKNN5Z0w6TZyj6STykdVtrCRSaPaH3eaZhxbQVB5AOqoumPJiZTRdYH0_7QHS1GU5Gc"/>
+</div>
+<div class="space-y-xs">
+<div class="flex items-center gap-sm">
+<h1 class="font-headline-xl text-headline-xl text-on-surface">Advanced CRM</h1>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded font-label-md text-label-md">Verified</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Streamline your customer relationships with enterprise-grade tools designed for modern sales teams. Built for scalability and precision.</p>
+<div class="flex items-center gap-sm pt-xs">
+<span class="font-label-md text-label-md text-primary">By Frappe Technologies</span>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md ml-1">4.8 (124 Reviews)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-sm mt-lg">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors shadow-sm duration-200 hover:bg-primary-container">Get App</button>
+<button class="border border-outline text-on-surface px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors transition-all duration-200 hover:border-primary hover:text-primary">View Documentation</button>
+</div>
+</div>
+<!-- Stats/Meta Card -->
+<div class="md:col-span-4 bg-surface rounded-xl border border-outline-variant p-lg shadow-[0_4px_24px_rgba(23,43,77,0.08)] flex flex-col gap-md">
+<div>
+<h3 class="font-label-md text-label-md text-outline uppercase tracking-wider mb-xs">Category</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="bg-surface-container text-on-surface px-3 py-1 rounded-full font-body-sm text-body-sm border border-outline-variant">Sales</span>
+<span class="bg-surface-container text-on-surface px-3 py-1 rounded-full font-body-sm text-body-sm border border-outline-variant">Productivity</span>
+</div>
+</div>
+<hr class="border-outline-variant"/>
+<div>
+<h3 class="font-label-md text-label-md text-outline uppercase tracking-wider mb-xs">License</h3>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-outline">description</span> MIT License
+                    </p>
+</div>
+<hr class="border-outline-variant"/>
+<div>
+<h3 class="font-label-md text-label-md text-outline uppercase tracking-wider mb-xs">Last Updated</h3>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-outline">update</span> Oct 24, 2023 (v2.4.1)
+                    </p>
+</div>
+</div>
+</section>
+<!-- Visuals & Overview -->
+<section class="space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface border-b border-outline-variant pb-xs">Overview</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Screenshots Carousel (Static Representation) -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-sm flex items-center justify-center overflow-hidden h-[400px]">
+<img alt="App Dashboard Screenshot" class="w-full h-full object-cover rounded-lg shadow-sm" data-alt="A clean, modern user interface dashboard displayed on a high-resolution screen. The dashboard features complex data visualizations, including line charts and bar graphs, rendered in cool blues and teals against a pristine white background. The layout is structured with a distinct sidebar and top navigation, embodying a highly functional, enterprise-grade software aesthetic. The lighting is soft and even, highlighting the crisp typography and structural grid." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJpuK8jBAQXn_VADbZEN35FeDrXWtPtAV23u0A_jVHaM-nhKBu6oxeiqWFr8K-iJcRtk4xlKVfqScFGgl5a0OVmxNmNxbmaAAZb-QmQYqqDK3_x7jSNB9ro2-MzbdLLJjD_BhPNQz1-yEtYiUlQbLtuh4MREbkolAkw0h7NSdLFPEfKxe2hxZhyZ9C4QRVxyt5YHEz7He6BSOoiAmgFXroWR9lxsWo8nC22f_KGSuF6JXC1zXxOgYSYX6Jqi0ATSBre8skn4K0058"/>
+</div>
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-sm flex items-center justify-center overflow-hidden h-[400px]">
+<img alt="App Analytics Screenshot" class="w-full h-full object-cover rounded-lg shadow-sm" data-alt="A close-up view of a minimalist software interface showing detailed analytics. The screen displays precise numerical data alongside a sleek, interactive heatmap graph. The color palette utilizes deep corporate blues and stark whites, with subtle gray borders creating a structured, information-dense layout. The overall mood is analytical, precise, and professional, reflecting a high-performance business tool." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO4WAen-KIRtMcCrG6d7m7H20NscgdDr0Yt048JbgyF1tuCXf3e7N-L-eMaWgawZuE2I0TG9NfNwFLIFuCD86Hq4oO5VlhPWTTzcVzq1VPxA2BMqE8q6vdzinx7PLzmoRbt_LIcLEyMCCubqDlG42lsbAHOmUN6WYRYKsG6XLIq9RtWEiS1iQrPQawZv9JFNUx4YFLOdzxDxWcvIIFH6myWrNPIgTGUUOHcOM7wW5WQDEADPIrfA5uVKCfiXJRlv8Y4GSJ1M7stLk"/>
+</div>
+</div>
+<div class="prose max-w-none font-body-md text-body-md text-on-surface-variant pt-md">
+<p class="mb-4">Advanced CRM is designed to handle the complexities of modern sales pipelines without sacrificing user experience. By focusing on data clarity and streamlined workflows, it empowers teams to close deals faster and maintain detailed records of customer interactions.</p>
+<p>Built natively for the Frappe ecosystem, it integrates seamlessly with existing modules, providing a unified view of your business operations from lead generation to final invoicing.</p>
+</div>
+</section>
+</main>
+<!-- Footer (From JSON) -->
+<footer class="w-full border-t border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 mt-xl">
+<div class="max-w-7xl mx-auto px-6 py-12 flex flex-col items-center justify-between gap-6 font-sans text-xs text-gray-500">
+<div class="text-md font-bold text-gray-700 dark:text-gray-300">Frappe Cloud</div>
+<nav class="flex gap-6">
+<a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors Standard link hover transitions transition-colors duration-200" href="#">Resources</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors Standard link hover transitions transition-colors duration-200" href="#">Company</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors Standard link hover transitions transition-colors duration-200" href="#">Support</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors Standard link hover transitions transition-colors duration-200" href="#">Terms of Service</a>
+</nav>
+<div>© 2024 Frappe Technologies. All rights reserved.</div>
+</div>
+</footer>
+</body></html>

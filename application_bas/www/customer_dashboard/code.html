@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Dashboard - Frappe Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "tertiary": "#414446",
+                        "surface-bright": "#f9f9ff",
+                        "primary-fixed": "#dae2ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-container": "#e8edff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-variant": "#d7e2ff",
+                        "on-secondary-container": "#007070",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-surface": "#041b3c",
+                        "tertiary-fixed-dim": "#c5c6c8",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "secondary": "#006a6a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e1e2e4",
+                        "primary-container": "#0052cc",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#0c56d0",
+                        "surface-container-high": "#e0e8ff",
+                        "primary": "#003d9b",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#8cf3f3",
+                        "on-tertiary-container": "#d2d3d5",
+                        "secondary-fixed-dim": "#6fd7d6",
+                        "surface-container-highest": "#d7e2ff",
+                        "on-surface-variant": "#434654",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "on-secondary-fixed": "#002020",
+                        "surface-container-low": "#f1f3ff",
+                        "surface": "#f9f9ff",
+                        "outline-variant": "#c3c6d6",
+                        "outline": "#737685",
+                        "on-primary-container": "#c4d2ff",
+                        "on-primary-fixed": "#001848",
+                        "background": "#f9f9ff",
+                        "tertiary-container": "#595b5d",
+                        "on-background": "#041b3c",
+                        "surface-dim": "#cadaff",
+                        "inverse-primary": "#b2c5ff",
+                        "secondary-fixed": "#8cf3f3",
+                        "inverse-surface": "#1d3052"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "max-width": "1280px",
+                        "xs": "0.5rem",
+                        "xl": "4rem",
+                        "md": "1.5rem",
+                        "sm": "1rem",
+                        "unit": "4px",
+                        "lg": "2.5rem",
+                        "gutter": "1.5rem",
+                        "margin": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "code-md": ["monospace"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+  :focus-visible {
+    outline: 2px solid theme('colors.primary');
+    outline-offset: 2px;
+  }
+  .transition-all-custom {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+</style></head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 z-50 border-r border-outline-variant bg-surface-container-lowest flex flex-col gap-1 p-4">
+<!-- Header -->
+<div class="mb-lg px-2 pt-2">
+<div class="flex items-center gap-xs mb-1">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary font-headline-md hover:bg-primary-container">
+                    F
+                </div>
+<h1 class="text-base font-semibold text-on-surface font-headline-md text-lg">Frappe Marketplace</h1>
+</div>
+<p class="font-body-sm text-on-surface-variant text-body-sm pl-9">Customer Portal</p>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-1">
+<!-- Active Tab: My Apps -->
+<a class="flex items-center gap-sm px-3 py-2 bg-surface-container-low text-primary shadow-sm border border-outline-variant rounded-lg font-label-md text-label-md transition-all-custom" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" data-weight="fill" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+                My Apps
+            </a>
+<a class="flex items-center gap-sm px-3 py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-all-custom hover:bg-surface-container-low/50" href="#">
+<span class="material-symbols-outlined" data-icon="vpn_key">vpn_key</span>
+                Licenses
+            </a>
+<a class="flex items-center gap-sm px-3 py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-all-custom hover:bg-surface-container-low/50" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Billing
+            </a>
+<a class="flex items-center gap-sm px-3 py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-all-custom hover:bg-surface-container-low/50" href="#">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+                Settings
+            </a>
+</div>
+<!-- CTA -->
+<div class="mt-auto pt-4">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-2 px-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity transition-all-custom hover:bg-primary-container">
+<span class="material-symbols-outlined text-sm" data-icon="explore">explore</span>
+                Explore More Apps
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col h-screen overflow-y-auto">
+<!-- Top App Bar (Simplified for Dashboard context) -->
+<header class="h-16 flex justify-end items-center px-6 border-b border-outline-variant bg-surface-container-lowest sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors transition-all-custom">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors transition-all-custom">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a person looking directly at the camera. The lighting is soft and high-key, creating a clean, corporate aesthetic suitable for a professional marketplace dashboard. The background is a neutral light gray to blend seamlessly with the modern UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc5SIXArPY4_T3kVaKGMNlQN3h6vicTxEOwxglqF1VvlcSLsRoUnAN0x-yPgRwIOcctKCHbrEanp-g1WUNbltGyJe0KQM0qUFSrkDzo1lBic_UC3vf0klLpHr4tWaU6-Pjg2hBoCeFKVGe0RSU9r5qol0_YN5_w99k33Z2lv90t_2HIyv7rZJ5WJ9YfTVmGSjb2b0ZP61uFhcWmNS4xhgv5Spk-3Xs2VHbTtez_QefWXZ8hajjpwvvP1S6SUXxl3G8JrEthwmxqng"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<div class="p-lg max-w-[1280px] w-full mx-auto grid grid-cols-12 gap-lg">
+<!-- Main Column -->
+<div class="col-span-12 lg:col-span-9 flex flex-col gap-lg">
+<!-- Page Header -->
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">My Applications</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your installed apps and subscriptions</p>
+</div>
+<!-- Installed Apps Grid -->
+<section>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- App Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col gap-4 shadow-[0_4px_6px_-1px_rgba(23,43,77,0.08)] hover:shadow-[0_10px_15px_-3px_rgba(23,43,77,0.12)] transition-shadow duration-200">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="inventory_2" data-weight="fill" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</div>
+<span class="bg-surface-container-high text-primary px-2 py-1 rounded-full font-label-md text-[12px] tracking-wide">Active</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">ERPNext Pro</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Comprehensive enterprise resource planning for growing businesses.</p>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/50">
+<button class="w-full text-center border border-outline-variant text-on-surface font-label-md text-label-md py-2 rounded hover:bg-surface-container-low transition-colors transition-all-custom hover:border-primary hover:text-primary">Manage App</button>
+</div>
+</div>
+<!-- App Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col gap-4 shadow-[0_4px_6px_-1px_rgba(23,43,77,0.08)] hover:shadow-[0_10px_15px_-3px_rgba(23,43,77,0.12)] transition-shadow duration-200">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="support_agent" data-weight="fill" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<span class="bg-error-container text-on-error-container px-2 py-1 rounded-full font-label-md text-[12px] tracking-wide">Expiring Soon</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Frappe Desk</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Customer support ticketing and helpdesk management system.</p>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/50">
+<button class="w-full text-center border border-outline-variant text-on-surface font-label-md text-label-md py-2 rounded hover:bg-surface-container-low transition-colors transition-all-custom hover:border-primary hover:text-primary">Renew License</button>
+</div>
+</div>
+<!-- App Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col gap-4 shadow-[0_4px_6px_-1px_rgba(23,43,77,0.08)] hover:shadow-[0_10px_15px_-3px_rgba(23,43,77,0.12)] transition-shadow duration-200">
+<div class="flex items-start justify-between">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="analytics" data-weight="fill" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<span class="bg-surface-container-high text-primary px-2 py-1 rounded-full font-label-md text-[12px] tracking-wide">Active</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Insights Analytics</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Advanced reporting and data visualization for ERPNext data.</p>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/50">
+<button class="w-full text-center border border-outline-variant text-on-surface font-label-md text-label-md py-2 rounded hover:bg-surface-container-low transition-colors transition-all-custom hover:border-primary hover:text-primary">Manage App</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Licenses Table Section -->
+<section class="mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Active Licenses</h3>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden shadow-[0_4px_6px_-1px_rgba(23,43,77,0.08)]">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="py-3 px-4 font-label-md text-label-md text-on-surface-variant font-semibold">App Name</th>
+<th class="py-3 px-4 font-label-md text-label-md text-on-surface-variant font-semibold">License Key</th>
+<th class="py-3 px-4 font-label-md text-label-md text-on-surface-variant font-semibold">Purchase Date</th>
+<th class="py-3 px-4 font-label-md text-label-md text-on-surface-variant font-semibold">Expiry Date</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<tr class="border-b border-outline-variant/50 hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4 text-on-surface font-medium">ERPNext Pro</td>
+<td class="py-3 px-4 text-on-surface-variant font-code-md text-code-md">••••-••••-••••-492A</td>
+<td class="py-3 px-4 text-on-surface-variant">Oct 12, 2023</td>
+<td class="py-3 px-4 text-on-surface-variant">Oct 12, 2024</td>
+</tr>
+<tr class="border-b border-outline-variant/50 hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4 text-on-surface font-medium">Frappe Desk</td>
+<td class="py-3 px-4 text-on-surface-variant font-code-md text-code-md">••••-••••-••••-B719</td>
+<td class="py-3 px-4 text-on-surface-variant">Nov 05, 2023</td>
+<td class="py-3 px-4 text-error font-medium">Nov 05, 2024</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4 text-on-surface font-medium">Insights Analytics</td>
+<td class="py-3 px-4 text-on-surface-variant font-code-md text-code-md">••••-••••-••••-88C2</td>
+<td class="py-3 px-4 text-on-surface-variant">Jan 22, 2024</td>
+<td class="py-3 px-4 text-on-surface-variant">Jan 22, 2025</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Sidebar / Quick Actions -->
+<div class="col-span-12 lg:col-span-3">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-[0_4px_6px_-1px_rgba(23,43,77,0.08)] sticky top-24">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Quick Actions</h3>
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low text-on-surface transition-colors group transition-all-custom" href="#">
+<div class="w-8 h-8 rounded bg-surface-container text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+</div>
+<span class="font-label-md text-label-md">Browse More Apps</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low text-on-surface transition-colors group transition-all-custom" href="#">
+<div class="w-8 h-8 rounded bg-surface-container text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="headset_mic">headset_mic</span>
+</div>
+<span class="font-label-md text-label-md">Contact Support</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low text-on-surface transition-colors group transition-all-custom" href="#">
+<div class="w-8 h-8 rounded bg-surface-container text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
+</div>
+<span class="font-label-md text-label-md">View Documentation</span>
+</a>
+</li>
+</ul>
+<div class="mt-6 pt-6 border-t border-outline-variant/50">
+<div class="bg-surface-container-high rounded-lg p-4 flex flex-col items-center text-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl mb-1" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h4 class="font-label-md text-label-md text-on-surface">Need Customization?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hire a certified Frappe expert to tailor apps to your needs.</p>
+<button class="mt-2 text-primary font-label-md text-label-md hover:underline transition-all-custom">Find an Expert</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

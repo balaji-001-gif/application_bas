@@ -1,0 +1,6 @@
+app_name = "application_bas"
+app_title = "Application Bas"
+app_publisher = "Balaji K"
+app_description = "Application Bas"
+app_email = "balajik@example.com"
+app_license = "MIT"

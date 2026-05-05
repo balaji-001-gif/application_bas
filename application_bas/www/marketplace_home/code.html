@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Frappe Marketplace - Explore Apps</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#041b3c",
+                      "on-primary-fixed-variant": "#0040a2",
+                      "secondary-fixed-dim": "#6fd7d6",
+                      "tertiary-fixed": "#e1e2e4",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#006a6a",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#e8edff",
+                      "tertiary-fixed-dim": "#c5c6c8",
+                      "on-tertiary-container": "#d2d3d5",
+                      "on-secondary-fixed": "#002020",
+                      "outline-variant": "#c3c6d6",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f1f3ff",
+                      "surface-variant": "#d7e2ff",
+                      "primary": "#003d9b",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "on-surface-variant": "#434654",
+                      "on-secondary-container": "#007070",
+                      "on-tertiary-fixed": "#191c1e",
+                      "primary-fixed": "#dae2ff",
+                      "on-primary-fixed": "#001848",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#edf0ff",
+                      "on-surface": "#041b3c",
+                      "secondary-fixed": "#8cf3f3",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#004f4f",
+                      "tertiary-container": "#595b5d",
+                      "background": "#f9f9ff",
+                      "inverse-surface": "#1d3052",
+                      "on-primary-container": "#c4d2ff",
+                      "secondary-container": "#8cf3f3",
+                      "outline": "#737685",
+                      "on-primary": "#ffffff",
+                      "surface-tint": "#0c56d0",
+                      "surface-container-highest": "#d7e2ff",
+                      "inverse-primary": "#b2c5ff",
+                      "surface-container-high": "#e0e8ff",
+                      "surface-bright": "#f9f9ff",
+                      "error": "#ba1a1a",
+                      "tertiary": "#414446",
+                      "primary-fixed-dim": "#b2c5ff",
+                      "surface": "#f9f9ff",
+                      "surface-dim": "#cadaff",
+                      "primary-container": "#0052cc"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "0.5rem",
+                      "xl": "4rem",
+                      "sm": "1rem",
+                      "max-width": "1280px",
+                      "gutter": "1.5rem",
+                      "margin": "2rem",
+                      "md": "1.5rem",
+                      "unit": "4px",
+                      "lg": "2.5rem"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "code-md": [
+                              "monospace"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "code-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-gray-900 font-sans text-sm font-medium tracking-tight fixed top-0 w-full border-b border-b border-gray-200 dark:border-gray-800 shadow-sm dark:shadow-none z-50">
+<div class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-6">
+<a class="text-xl font-bold text-gray-900 dark:text-white" href="#">Frappe Cloud</a>
+<div class="hidden md:flex items-center relative">
+<span class="material-symbols-outlined absolute left-3 text-gray-400">search</span>
+<input class="pl-10 pr-4 py-1.5 rounded-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm outline-none w-64 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200 focus:border-primary" placeholder="Search apps..." type="text"/>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 transition-colors opacity-80 duration-200 py-1 transition-all duration-200 text-primary border-primary hover:text-primary" href="#">Explore</a>
+<a class="text-gray-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors py-1 transition-all duration-200 hover:text-primary" href="#">Documentation</a>
+<a class="text-gray-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors py-1 transition-all duration-200 hover:text-primary" href="#">Community</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors transition-all duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="bg-blue-600 text-white px-4 py-1.5 rounded-md hover:bg-blue-700 transition-colors text-sm font-semibold transition-all duration-200 hover:shadow-md active:scale-95 transition-all duration-200 bg-primary hover:bg-primary-container hover:text-on-primary-container">Sign In</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-gray-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxVfYIdZm-TwHhssxyfMEbV0aylVByOxFbQ3IAxSVeiKKTOyC1nguqs_iv2cWG7exjHbzrw33Ky73AwoKjqZlwETngjGgrQaYe2jRvAAxS4z0wBgwToxIRWIyh9t1L8hVmz2cLkL95qS4IB-KgGFOFCUN402qt7zHMMaXW2TMoGannM1cENf9DOOGSzHQXezTja2UpaiEPqGGQL-O6enW5x2QUa1NcyAz9gbqXLk3j2_NKOQ4EJAEGjiWSPXlLcEIpfcGZnCqYQ3k"/>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-[72px]">
+<!-- Hero Section -->
+<section class="relative bg-surface-container-low py-20 lg:py-32 overflow-hidden">
+<div class="max-w-max-width mx-auto px-margin relative z-10 text-center">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-6 max-w-3xl mx-auto">Discover the perfect apps to run your business</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Explore hundreds of open-source and premium applications built on the Frappe framework. Everything you need, all in one place.</p>
+<div class="max-w-2xl mx-auto relative flex items-center shadow-lg rounded-full bg-surface">
+<span class="material-symbols-outlined absolute left-4 text-outline text-2xl">search</span>
+<input class="w-full pl-12 pr-32 py-4 rounded-full border-none bg-transparent focus:ring-2 focus:ring-primary text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200" placeholder="Search for ERP, CRM, HRMS..." type="text"/>
+<button class="absolute right-2 top-2 bottom-2 bg-primary text-on-primary px-6 rounded-full font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm active:scale-95 transition-all duration-200">Search Apps</button>
+</div>
+<div class="mt-8 flex justify-center gap-4 text-sm font-body-sm text-on-surface-variant">
+<span>Popular:</span>
+<a class="hover:text-primary transition-colors" href="#">ERPNext</a>
+<a class="hover:text-primary transition-colors" href="#">Frappe HR</a>
+<a class="hover:text-primary transition-colors" href="#">Insights</a>
+</div>
+</div>
+<!-- Abstract background elements -->
+<div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none opacity-40">
+<div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-gradient-to-br from-primary-fixed to-transparent blur-3xl"></div>
+<div class="absolute top-[40%] -right-[10%] w-[40%] h-[60%] rounded-full bg-gradient-to-tl from-secondary-fixed to-transparent blur-3xl"></div>
+</div>
+</section>
+<!-- Featured Apps -->
+<section class="max-w-max-width mx-auto px-margin py-lg">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Featured Apps</h2>
+<a class="text-primary hover:text-on-primary-container font-label-md text-label-md flex items-center gap-1 transition-colors" href="#">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- App Card 1 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-md shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col h-full group hover:border-primary/50 transition-all duration-300">
+<div class="flex items-start gap-4 mb-4">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center shrink-0 border border-outline-variant shadow-sm group-hover:scale-105 transition-transform hover:border-primary/50 transition-all duration-300">
+<img alt="ERPNext Logo" class="w-10 h-10 object-contain data-alt='A clean, modern corporate logo icon representing enterprise software. Minimalist design with a vibrant blue and teal color palette on a pure white background. The logo features sharp geometric shapes suggesting structure and efficiency, conveying a professional, high-performance tech aesthetic.'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA90HIkZzeNIRbTeKxHBPF6aQqHZPqo7r6r7Xy3BX-ku-gKtrYyzu9er4xwz1BhAJfsuerqcHzA4qBjti2VlEv3VLs8GiYv_sYmEnHSxkVhvMzTxYO5RyWcZ0-h7WIKPkxrSM1evgWktcwriThu2GYaYELXnZRoWEtg_-ECn6fDZy6SfeilcyyqoIB82d437lZyk7VYxE7x7pvTKWk6Xavjqf70IeDqmcNF0ZOBNUGc9cqnBy19SmBIrMWYOGSnvjHQboLJjzq48lc"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">ERPNext</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">The most agile ERP on the planet. Manage accounting, HR, manufacturing, and more.</p>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-1 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9 (2k+)</span>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded text-xs font-semibold">Free</span>
+</div>
+</div>
+<!-- App Card 2 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-md shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col h-full group hover:border-primary/50 transition-all duration-300">
+<div class="flex items-start gap-4 mb-4">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center shrink-0 border border-outline-variant shadow-sm group-hover:scale-105 transition-transform hover:border-primary/50 transition-all duration-300">
+<img alt="Frappe HR Logo" class="w-10 h-10 object-contain data-alt='A modern software application icon designed for a human resources platform. The icon utilizes a vibrant gradient of deep blue to bright teal on a clean white background. It features stylized, abstract human figures integrated with subtle geometric data nodes, representing connectivity and management in a professional tech environment.'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRh2X0BcZZtXeMETSX4s61ZKvGaRF6S5MqrIWhbu7mBXYW8W2xZ14NFuW92wUlGSEx61MK4sn_ZIj73p3fYkH_2K_FWpnDAsFccr8sLiMZSMjkGaMlKXtu76LQ8yTc0vWK0Bd7iUI_5T392Pa31a0x-AyUmhca3DQ5uXgcNwevPtlJ59M0EPh7MQ1Eco_5UCJ3qLSn7wPP_10XvMXDlEW1okgmF-ZCCSNrkOHCOonWRwV9uuC_nzacuz6zSOiwKULS9WI5Sv63S7Q"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Frappe HR</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Modern HR and Payroll software. Leave, attendance, expense claims, and recruitment.</p>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-1 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.8 (850)</span>
+</div>
+<span class="bg-surface-container-high text-on-surface px-2 py-1 rounded text-xs font-semibold">$10/mo</span>
+</div>
+</div>
+<!-- App Card 3 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-md shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col h-full group hover:border-primary/50 transition-all duration-300">
+<div class="flex items-start gap-4 mb-4">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center shrink-0 border border-outline-variant shadow-sm group-hover:scale-105 transition-transform hover:border-primary/50 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-3xl">insights</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Insights</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Free and Open Source Data Analytics tool for your Frappe apps.</p>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-1 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.7 (420)</span>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded text-xs font-semibold">Free</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Top Categories -->
+<section class="bg-surface-container-low py-lg">
+<div class="max-w-max-width mx-auto px-margin">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Top Categories</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<a class="bg-surface border border-outline-variant rounded-lg p-6 flex flex-col items-center justify-center text-center hover:border-primary hover:shadow-sm transition-all group" href="#">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-on-primary transition-colors text-primary">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Accounting</span>
+</a>
+<a class="bg-surface border border-outline-variant rounded-lg p-6 flex flex-col items-center justify-center text-center hover:border-primary hover:shadow-sm transition-all group" href="#">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center mb-3 group-hover:bg-secondary group-hover:text-on-secondary transition-colors text-secondary">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Human Resources</span>
+</a>
+<a class="bg-surface border border-outline-variant rounded-lg p-6 flex flex-col items-center justify-center text-center hover:border-primary hover:shadow-sm transition-all group" href="#">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-on-primary transition-colors text-on-surface-variant hover:border-primary/50 transition-all duration-300">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Inventory</span>
+</a>
+<a class="bg-surface border border-outline-variant rounded-lg p-6 flex flex-col items-center justify-center text-center hover:border-primary hover:shadow-sm transition-all group" href="#">
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center mb-3 group-hover:bg-error group-hover:text-on-error transition-colors text-on-error-container">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Customer Support</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-gray-50 dark:bg-gray-950 font-sans text-xs text-gray-500 w-full border-t border-t border-gray-200 dark:border-gray-800 flat">
+<div class="max-w-7xl mx-auto px-6 py-12 flex flex-col items-center justify-between gap-6">
+<div class="flex gap-6">
+<a class="text-gray-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors transition-all duration-200 hover:text-primary" href="#">Resources</a>
+<a class="text-gray-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors transition-all duration-200 hover:text-primary" href="#">Company</a>
+<a class="text-gray-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors transition-all duration-200 hover:text-primary" href="#">Support</a>
+<a class="text-gray-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors transition-all duration-200 hover:text-primary" href="#">Terms of Service</a>
+</div>
+<div class="text-md font-bold text-gray-700 dark:text-gray-300">© 2024 Frappe Technologies. All rights reserved.</div>
+</div>
+</footer>
+</body></html>

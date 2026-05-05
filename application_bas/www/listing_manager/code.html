@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Listing Manager - Seller Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#041b3c",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "secondary-fixed-dim": "#6fd7d6",
+                        "tertiary-fixed": "#e1e2e4",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#006a6a",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e8edff",
+                        "tertiary-fixed-dim": "#c5c6c8",
+                        "on-tertiary-container": "#d2d3d5",
+                        "on-secondary-fixed": "#002020",
+                        "outline-variant": "#c3c6d6",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-variant": "#d7e2ff",
+                        "primary": "#003d9b",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-surface-variant": "#434654",
+                        "on-secondary-container": "#007070",
+                        "on-tertiary-fixed": "#191c1e",
+                        "primary-fixed": "#dae2ff",
+                        "on-primary-fixed": "#001848",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-surface": "#041b3c",
+                        "secondary-fixed": "#8cf3f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "tertiary-container": "#595b5d",
+                        "background": "#f9f9ff",
+                        "inverse-surface": "#1d3052",
+                        "on-primary-container": "#c4d2ff",
+                        "secondary-container": "#8cf3f3",
+                        "outline": "#737685",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#0c56d0",
+                        "surface-container-highest": "#d7e2ff",
+                        "inverse-primary": "#b2c5ff",
+                        "surface-container-high": "#e0e8ff",
+                        "surface-bright": "#f9f9ff",
+                        "error": "#ba1a1a",
+                        "tertiary": "#414446",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "surface": "#f9f9ff",
+                        "surface-dim": "#cadaff",
+                        "primary-container": "#0052cc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "0.5rem",
+                        "xl": "4rem",
+                        "sm": "1rem",
+                        "max-width": "1280px",
+                        "gutter": "1.5rem",
+                        "margin": "2rem",
+                        "md": "1.5rem",
+                        "unit": "4px",
+                        "lg": "2.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "code-md": ["monospace"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .shadow-ambient {
+            box-shadow: 0 4px 6px -1px rgba(23, 43, 77, 0.08), 0 2px 4px -1px rgba(23, 43, 77, 0.04);
+        }
+        .shadow-ambient-hover:hover {
+            box-shadow: 0 10px 15px -3px rgba(23, 43, 77, 0.12), 0 4px 6px -2px rgba(23, 43, 77, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex font-body-md">
+<!-- SideNavBar -->
+<nav class="bg-white dark:bg-gray-900 h-full w-64 border-r border-gray-200 dark:border-gray-800 flat no shadows flex flex-col gap-4 p-4 fixed left-0 top-0 z-10 hidden md:flex">
+<div class="flex items-center gap-3 mb-6 px-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md font-bold">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+</div>
+<div>
+<h1 class="text-lg font-bold text-gray-900 dark:text-white font-headline-md">Seller Center</h1>
+<p class="font-sans text-sm font-semibold text-gray-500 font-body-sm">Manage your apps</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 flex-grow">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-sans text-sm font-semibold transition-colors rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 dark:bg-blue-900/20 dark:text-blue-300 rounded-lg font-sans text-sm font-semibold Active: scale-95 transition-transform duration-150 transition-all duration-200 bg-surface-container text-primary font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span>My Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-sans text-sm font-semibold transition-colors rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Sales</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-sans text-sm font-semibold transition-colors rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-sans text-sm font-semibold transition-colors rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="mt-auto">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-sans text-sm font-semibold transition-colors rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help Center</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-64 p-lg max-w-[1280px] w-full">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-lg gap-4">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-1">Listings</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage, publish, and track your applications.</p>
+</div>
+<button class="bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container px-6 py-3 rounded-lg font-label-md text-label-md transition-colors duration-200 flex items-center gap-2 shadow-ambient transition-all duration-200">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                Create New Listing
+            </button>
+</header>
+<!-- Filters & Search -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-ambient mb-lg flex flex-col sm:flex-row gap-4 items-center justify-between">
+<div class="relative w-full sm:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline-variant transition-all duration-200 shadow-inner" placeholder="Search applications..." type="text"/>
+</div>
+<div class="flex gap-2 w-full sm:w-auto">
+<select class="bg-surface border border-outline-variant text-on-surface rounded-lg px-4 py-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200">
+<option>All Statuses</option>
+<option>Published</option>
+<option>Draft</option>
+</select>
+<button class="border border-outline-variant text-on-surface px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center gap-2 transition-all duration-200">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                    Filter
+                </button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-ambient overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="p-md py-4 font-semibold">App Name</th>
+<th class="p-md py-4 font-semibold">Status</th>
+<th class="p-md py-4 font-semibold">Version</th>
+<th class="p-md py-4 font-semibold">Sales</th>
+<th class="p-md py-4 font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant font-body-sm text-body-sm text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-variant/30 transition-colors group">
+<td class="p-md py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-md bg-surface-variant border border-outline-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<p class="font-semibold text-on-background">Inventory Pro</p>
+<p class="text-on-surface-variant text-xs">Updated 2 days ago</p>
+</div>
+</div>
+</td>
+<td class="p-md py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-container border border-secondary-fixed-dim">
+                                    Published
+                                </span>
+</td>
+<td class="p-md py-4 font-code-md text-code-md text-on-surface-variant">v2.4.1</td>
+<td class="p-md py-4 font-semibold">1,245</td>
+<td class="p-md py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary-fixed rounded-md transition-colors transition-all duration-200" title="View Analytics">
+<span class="material-symbols-outlined text-[20px]" data-icon="bar_chart">bar_chart</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary-fixed rounded-md transition-colors transition-all duration-200" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container rounded-md transition-colors transition-all duration-200" title="More">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-variant/30 transition-colors group">
+<td class="p-md py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-md bg-surface-variant border border-outline-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="point_of_sale">point_of_sale</span>
+</div>
+<div>
+<p class="font-semibold text-on-background">POS Connect</p>
+<p class="text-on-surface-variant text-xs">Updated 1 week ago</p>
+</div>
+</div>
+</td>
+<td class="p-md py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-surface-container-high text-on-surface border border-outline-variant">
+                                    Draft
+                                </span>
+</td>
+<td class="p-md py-4 font-code-md text-code-md text-on-surface-variant">v1.0.0-beta</td>
+<td class="p-md py-4 text-on-surface-variant">--</td>
+<td class="p-md py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary-fixed rounded-md transition-colors transition-all duration-200" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container rounded-md transition-colors transition-all duration-200" title="More">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-variant/30 transition-colors group">
+<td class="p-md py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-md bg-surface-variant border border-outline-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<p class="font-semibold text-on-background">Auto Invoice</p>
+<p class="text-on-surface-variant text-xs">Updated 1 month ago</p>
+</div>
+</div>
+</td>
+<td class="p-md py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-container border border-secondary-fixed-dim">
+                                    Published
+                                </span>
+</td>
+<td class="p-md py-4 font-code-md text-code-md text-on-surface-variant">v3.1.2</td>
+<td class="p-md py-4 font-semibold">892</td>
+<td class="p-md py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary-fixed rounded-md transition-colors transition-all duration-200" title="View Analytics">
+<span class="material-symbols-outlined text-[20px]" data-icon="bar_chart">bar_chart</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary-fixed rounded-md transition-colors transition-all duration-200" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container rounded-md transition-colors transition-all duration-200" title="More">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-md border-t border-outline-variant flex items-center justify-between bg-surface-container-lowest">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Showing <span class="font-semibold text-on-surface">1</span> to <span class="font-semibold text-on-surface">3</span> of <span class="font-semibold text-on-surface">12</span> results</p>
+<div class="flex gap-1">
+<button class="px-3 py-1 border border-outline-variant rounded-md text-on-surface-variant hover:bg-surface-variant disabled:opacity-50 transition-colors transition-all duration-200" disabled="">Previous</button>
+<button class="px-3 py-1 border border-outline-variant rounded-md bg-primary-container text-on-primary-container font-semibold transition-all duration-200">1</button>
+<button class="px-3 py-1 border border-outline-variant rounded-md text-on-surface-variant hover:bg-surface-variant transition-colors transition-all duration-200">2</button>
+<button class="px-3 py-1 border border-outline-variant rounded-md text-on-surface-variant hover:bg-surface-variant transition-colors transition-all duration-200">3</button>
+<button class="px-3 py-1 border border-outline-variant rounded-md text-on-surface-variant hover:bg-surface-variant transition-colors transition-all duration-200">Next</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>
